@@ -92,10 +92,11 @@ async function deleteMessages(authToken, authorId, guildId, channelId, minId, ma
     async function recurse() {
         let API_SEARCH_URL;
         if (guildId === '@me') {
-            API_SEARCH_URL = `https://discord.com/api/v9/channels/${channelId}/messages/`; // DMs
+            API_SEARCH_URL = `https://discord.com/api/v9/channels/${channelId}/messages`; // DMs
+            //https://discord.com/api/v9/channels/1342053004026707979/messages
         }
         else {
-            API_SEARCH_URL = `https://discord.com/api/v9/guilds/${guildId}/messages/`; // Server
+            API_SEARCH_URL = `https://discord.com/api/v9/guilds/${guildId}/messages`; // Server
         }
 
         const headers = {
